@@ -24,7 +24,7 @@ modelList <- list(ng=6000,
 set.seed(2016)
 
 
-output  <- gjamGibbs(~ temp + moisture + deficit + soil +u1 + u2 + u3 + 
+output  <- gjam(~ temp + moisture + deficit + soil +u1 + u2 + u3 + 
                        I(moisture^2) +
                        moisture*deficit + 
                        moisture*soil + 
@@ -35,13 +35,12 @@ output  <- gjamGibbs(~ temp + moisture + deficit + soil +u1 + u2 + u3 +
                      ydata = plotByW,
                      modelList = modelList)
 
-save.image(paste('output-mainModel',
+save.image(paste('output',
                  modelList$ng/1000, modelList$burnin/1000,
                  substring(make.names(Sys.time()),2),
                  '.RData', sep = '-'))
 
-output$modelSummary$betaTraitMu
-out <- output
+output$parameterTables$betaTraitMu
 
 specByTrait <- traitList$specByTrait
 
@@ -63,15 +62,15 @@ pl  <- list(width=4, height=4, corLines=F,
             SMALLPLOTS=F,GRIDPLOTS=T, SAVEPLOTS=T,
             boxBorder = boxBorder, boxCol = boxCol)       
 
-gjamPlot(output = out, pl)
+gjamPlot(output = output, pl)
 
 
 wFactors <- which(apply(output$x, 2, function(x)all(x%in%c(0,1))))
 sdCols <- apply(output$x, 2, sd)
 sdCols[wFactors] <- 1
 
-muTable <- output$modelSummary$betaTraitMu[,4:6]*sdCols/matrix(sdTraits[4:6],nrow = ncol(output$x), 3, byrow = T)
-seTable <- output$modelSummary$betaTraitSe[,4:6]*sdCols/matrix(sdTraits[4:6],nrow = ncol(output$x), 3, byrow = T)
+muTable <- output$parameterTables$betaTraitMu[,4:6]*sdCols/matrix(sdTraits[4:6],nrow = ncol(output$x), 3, byrow = T)
+seTable <- output$parameterTables$betaTraitSe[,4:6]*sdCols/matrix(sdTraits[4:6],nrow = ncol(output$x), 3, byrow = T)
 
 write.csv(muTable, file = 'betaTraitMu.csv')
 write.csv(seTable, file = 'betaTraitSe.csv')
