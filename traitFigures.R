@@ -31,3 +31,9 @@ source('figures/traitFig.SensDeficit.R')
 source('figures/traitFig.SensMoisture.R')
 
 source('figures/traitFig.AspectEffect.R')
+
+source('figures/traitFig.CWM.Maps.R')
+
+
+source('figures/traitFig.traitClimateSiteInteractions.R')
+source('figures/traitFig.traitClimateSiteInteractionsNew.R')

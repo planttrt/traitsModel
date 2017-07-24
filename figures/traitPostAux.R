@@ -23,13 +23,19 @@ plotSensitivity <- function(pngName, txtTitle, paramSensList, traitNames,
     ww <- paramSensList[[j-3]]$sign!=0
     
     par(xaxt='n', yaxt='n')
+    valRange <- quantile(ssj[ww], probs = seq(0.05,.95, by = .1), na.rm = T)
+    if(prod(range(valRange))<0){
+      valRange1 <- c(-valRange[valRange>0],0,valRange[valRange>0])
+      valRange2 <- c(valRange[valRange<0],0,-rev(valRange[valRange<0]))
+      valRange <- switch((length(valRange1)>length(valRange2))+1, valRange2, valRange1)
+    }
     mapColorData(x = plotByX$plotLon[ww], 
                  y = plotByX$plotLat[ww],
                  data = ssj[ww],
                  statesborder = F,
                  xlim = range(plotByX$plotLon), 
                  ylim = range(plotByX$plotLat), 
-                 valRange = quantile(ssj[ww], probs = seq(0.05,.95, by = .1), na.rm = T), 
+                 valRange = valRange, 
                  cex.all = 2, colList = colList, symSize=1.2, alpha = .5)
     
     mtext(text = traitNames[j], side = 3, line = .7, cex=2)
@@ -133,15 +139,15 @@ postGibbsChains <- function(betachains,
   
   if(!exactPredictors){
     nameMatrix <- fullMatrix[
-    trait%in%traitsToPlot&
-      (predictor%in%predictorsToPlot|
-         pred1%in%predictorsToPlot|
-         pred2%in%predictorsToPlot)&
-      #predictorFilter&
-      (signifcant|!onlySignificant)&
-      interaction%in%interactionFilter&
-      ((predictor!='intercept')|!excludeIntercept)
-    , ]
+      trait%in%traitsToPlot&
+        (predictor%in%predictorsToPlot|
+           pred1%in%predictorsToPlot|
+           pred2%in%predictorsToPlot)&
+        #predictorFilter&
+        (signifcant|!onlySignificant)&
+        interaction%in%interactionFilter&
+        ((predictor!='intercept')|!excludeIntercept)
+      , ]
   }else{
     nameMatrix <- fullMatrix[
       trait%in%traitsToPlot&
@@ -207,7 +213,8 @@ posteriorPlots <- function(post, pngName, statsParam=c(.025,.25,.50,.75,.975)){
   par(mfrow=c(3,1), bty='n', xaxt='s', yaxt='n', mar=c(1,1,1,1), oma=c(1,1,1,1))
   for(t in c('N','P','SLA')){
     chains <- post$chains[,which(post$nameMatrix[,trait]==t)]
-    plotGibbsBoxplots(chains, statsParam= statsParam, textAdj = 0, labels = post$nameMatrix$predictor, sigPlot = F, sort = F)
+    plotGibbsBoxplots(chains, statsParam= statsParam, textAdj = 0,cex.label = 1.8,
+                      labels = post$nameMatrix$predictor, sigPlot = F, sort = F)
     # plotGibbsChains(chains, labels = post$nameMatrix$predictor)
     mtext(text = t, side = 2, line = 0, cex=2, font=2)
   }
