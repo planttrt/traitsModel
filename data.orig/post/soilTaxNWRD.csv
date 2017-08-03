@@ -1,0 +1,120 @@
+Color,ID,Soil
+#FFFFFF,255,NODATA
+#FC894D,43,Acric Ferralsols
+#845851,95,Acric Plinthosols
+#FFE8BE,15,Albic Arenosols
+#F896B4,76,Albic Luvisols
+#A05246,85,Alic Nitisols
+#FC6B5D,12,Aluandic Andosols
+#FDE4B7,99,Aric Regosols
+#FDD2B8,100,Calcaric Regosols
+#E5C75D,36,Calcic Chernozems
+#AB9ABF,53,Calcic Gleysols
+#FFF9AD,59,Calcic Gypsisols
+#8291B8,61,Calcic Histosols
+#D2A18D,66,Calcic Kastanozems
+#F9A890,77,Calcic Luvisols
+#F8D8ED,108,Calcic Solonetz
+#A87188,115,Calcic Vertisols
+#8A9698,62,Cryic Histosols
+#E4DBBF,10,Cutanic Alisols
+#FDCE70,25,Endogleyic Cambisols
+#D7965F,90,Endogleyic Planosols
+#FEE7C0,16,Ferralic Arenosols
+#EDC669,26,Ferralic Cambisols
+#788092,63,Fibric Histosols
+#F9A091,78,Gleyic Luvisols
+#6EAA7C,97,Gleyic Podzols
+#E2CDCC,109,Gleyic Solonetz
+#E05B9A,105,Gypsic Solonchaks
+#FE813E,1,Haplic Acrisols
+#FD9F39,2,Haplic Acrisols (Alumic)
+#FDAE6B,3,Haplic Acrisols (Ferric)
+#FD8D3C,4,Haplic Acrisols (Humic)
+#F0C85C,7,Haplic Albeluvisols
+#F5EBCC,11,Haplic Alisols
+#F5E7CA,13,Haplic Andosols
+#FEE3C0,17,Haplic Arenosols
+#FEE4B1,18,Haplic Arenosols (Calcaric)
+#FFEF51,21,Haplic Calcisols
+#F8E729,22,Haplic Calcisols (Sodic)
+#FDE260,27,Haplic Cambisols
+#FDE770,28,Haplic Cambisols (Calcaric)
+#FDF770,29,Haplic Cambisols (Chromic)
+#F6CE4B,30,Haplic Cambisols (Dystric)
+#FDE170,31,Haplic Cambisols (Eutric)
+#FDE05F,32,Haplic Cambisols (Humic)
+#FDEB70,33,Haplic Cambisols (Sodic)
+#E5D15C,37,Haplic Chernozems
+#927D9E,39,Haplic Cryosols
+#FC9C4D,44,Haplic Ferralsols
+#E36940,45,Haplic Ferralsols (Rhodic)
+#FC934D,46,Haplic Ferralsols (Xanthic)
+#10A9E9,48,Haplic Fluvisols
+#0FC9E9,49,Haplic Fluvisols (Arenic)
+#0F8BE9,50,Haplic Fluvisols (Calcaric)
+#0F49E9,51,Haplic Fluvisols (Dystric)
+#0F8EE9,52,Haplic Fluvisols (Eutric)
+#A087BF,54,Haplic Gleysols
+#793FBF,55,Haplic Gleysols (Dystric)
+#9E83BF,56,Haplic Gleysols (Eutric)
+#FFF587,60,Haplic Gypsisols
+#D28769,67,Haplic Kastanozems
+#988F98,68,Haplic Leptosols
+#C9C9C9,69,Haplic Leptosols (Eutric)
+#F7C7CA,73,Haplic Lixisols
+#F7B5E9,74,Haplic Lixisols (Chromic)
+#F795B6,75,Haplic Lixisols (Ferric)
+#F99491,79,Haplic Luvisols
+#F9919B,80,Haplic Luvisols (Chromic)
+#F99C92,81,Haplic Luvisols (Ferric)
+#CC7B68,86,Haplic Nitisols (Rhodic)
+#D5EADB,87,Haplic Phaeozems
+#F0966B,91,Haplic Planosols (Dystric)
+#F69C69,92,Haplic Planosols (Eutric)
+#6DAA61,98,Haplic Podzols
+#FDD897,101,Haplic Regosols (Dystric)
+#FDDA9C,102,Haplic Regosols (Eutric)
+#FFD49C,103,Haplic Regosols (Sodic)
+#E05BB4,106,Haplic Solonchaks
+#E05B7F,107,Haplic Solonchaks (Sodic)
+#F8AADE,110,Haplic Solonetz
+#8C7E79,113,Haplic Umbrisols
+#A88E99,116,Haplic Vertisols
+#A85C7D,117,Haplic Vertisols (Eutric)
+#3C5A6A,64,Hemic Histosols
+#FFD372,8,Histic Albeluvisols
+#FEEEC0,19,Hypoluvic Arenosols
+#FDE170,34,Leptic Cambisols
+#F99184,82,Leptic Luvisols
+#B4EADB,88,Leptic Phaeozems
+#FDD58E,104,Leptic Regosols
+#798C83,114,Leptic Umbrisols
+#B4BDB6,70,Lithic Leptosols
+#AB7269,96,Lixic Plinthosols
+#FFFC2B,23,Luvic Calcisols
+#E5D85C,38,Luvic Chernozems
+#C2EADB,89,Luvic Phaeozems
+#D29964,93,Luvic Planosols
+#73C3F4,112,Luvic Stagnosols
+#8759BF,57,Mollic Gleysols
+#9098A3,71,Mollic Leptosols
+#F8DFE6,111,Mollic Solonetz
+#A851A2,118,Mollic Vertisols
+#FFEE2B,24,Petric Calcisols
+#FAEBC6,42,Petric Durisols
+#EC6801,5,Plinthic Acrisols
+#FEF3C0,20,Protic Arenosols
+#A2A2A2,72,Rendzic Leptosols
+#7F807A,65,Sapric Histosols
+#D8955D,94,Solodic Planosols
+#F3B992,83,Stagnic Luvisols
+#7A7C88,40,Turbic Cryosols
+#FFD170,9,Umbric Albeluvisols
+#F59641,47,Umbric Ferralsols
+#936FBF,58,Umbric Gleysols
+#FDDF70,35,Vertic Cambisols
+#F99192,84,Vertic Luvisols
+#EC6806,6,Vetic Acrisols
+#FC5546,14,Vitric Andosols
+#9E8C7D,41,Vitric Cryosols

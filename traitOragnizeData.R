@@ -1,3 +1,12 @@
+
+whichPolygon <- function(coords, shape){
+  shape@data<- cbind(1:nrow(shape@data), shape@data)
+  crs.shape<- projection(shape)
+  coords2<- SpatialPoints(coords, proj4string = CRS(crs.shape))
+  pol.n<- over(coords2, shape,fn=NULL)
+  matrix(pol.n[,1],ncol=1)
+}
+
 cl <- read.csv('data/pre/climate.csv')
 so <- read.csv('data/pre/soilAll.csv', header = F)
 ll <- read.csv('data/pre/lonLatAll.csv')
@@ -23,14 +32,17 @@ dem <- read.csv('data/pre/demAll.csv')
 elev <- dem$elevation
 plotByX <- cbind(plotByX, elev)
 
-traitBySpecies <- read.csv('data/pre/traitSp.csv')
-rownames(traitBySpecies) <- c('SM','WD','MH','N','P','SLA','Deciduous','BLEver','NLEver')
+load('data/forestTraits.Rdata')
+speciesByTraits <- forestTraits$specByTrait[c(1,6,2,3:5,10, 7:9,11:12)]
+traitTypes <- forestTraits$traitTypes[c(1,6,2,3:5,10, 7:9,11:12)]
+colnames(speciesByTraits)[1:6] <- c('SM','WD','MH','N','P','SLA')
+colnames(speciesByTraits)
 
-speciesByTraits <- as.data.frame(t(traitBySpecies))
+# speciesByTraits <- as.data.frame(t(traitBySpecies))
 
 
-leaf <- colnames(speciesByTraits)[7:9][rowSums(speciesByTraits[,7:9]*matrix(1:3, nrow = 65, ncol = 3, byrow = T))]
-speciesByTraits <- cbind(speciesByTraits[,1:6],leaf )
+# leaf <- colnames(speciesByTraits)[7:9][rowSums(speciesByTraits[,7:9]*matrix(1:3, nrow = 65, ncol = 3, byrow = T))]
+# speciesByTraits <- cbind(speciesByTraits[,1:6],leaf )
 
 # traitMuAll <- read.csv('data/pre/traitMuAll.csv')
 # traitSdAll <- read.csv('data/pre/traitSdAll.csv')
@@ -44,7 +56,7 @@ speciesByTraits$N <- speciesByTraits$N*10 #unit conversion
 speciesByTraits$P <- speciesByTraits$P*10 #unit conversion
 
 
-source('~/Projects/procVisData/geoSpatial.R')
+source('/Volumes/5TB-STORE/MacBook/Projects/procVisData/geoSpatial.R')
 library(raster)
 library(data.table)
 library(tools)
@@ -76,22 +88,28 @@ exposure <- slopeAspectToExposure(plotByX$slope, plotByX$aspect, degree = T)
 
 plotByX <- cbind(plotByX, exposure)
 
-traitMuAll <- read.csv('data/pre/traitMuAll.csv')
-traitSdAll <- read.csv('data/pre/traitSdAll.csv')
-plotNames2 <- matrix(unlist(strsplit(rownames(traitMuAll), split = '_ereg_')), ncol = 2, byrow = T)[,1]
-
-w <-match(plotNames, plotNames2)
-traitMuAll <- traitMuAll[w,]
-traitSdAll <- traitSdAll[w,]
+# traitMuAll <- read.csv('data/pre/traitMuAll.csv')
+# traitSdAll <- read.csv('data/pre/traitSdAll.csv')
+# plotNames2 <- matrix(unlist(strsplit(rownames(traitMuAll), split = '_ereg_')), ncol = 2, byrow = T)[,1]
+# 
+# w <-match(plotNames, plotNames2)
+# traitMuAll <- traitMuAll[w,]
+# traitSdAll <- traitSdAll[w,]
 
 
 colnames(plotByX)[which(colnames(plotByX)=='therm')] <- 'surplus'
 
+
+
+spp <- colnames(plotByW)
+spp <- spp[spp %in%rownames(speciesByTraits)]
+
 write.table(plotByX, 'data/post/plotByX.csv', sep = ',')
-write.table(plotByW, 'data/post/plotByW.csv', sep = ',')
-write.table(plotByY, 'data/post/plotByY.csv', sep = ',')
-write.table(speciesByTraits, 'data/post/speciesByTraits.csv', sep = ',')
-write.table(traitMuAll, 'data/post/traitMuAll.csv', sep = ',')
-write.table(traitSdAll, 'data/post/traitSdAll.csv', sep = ',')
+write.table(plotByW[,spp], 'data/post/plotByW.csv', sep = ',')
+write.table(plotByY[,spp], 'data/post/plotByY.csv', sep = ',')
+write.table(speciesByTraits[spp,], 'data/post/speciesByTraits.csv', sep = ',')
+write.table(traitTypes, 'data/post/traitTypes.csv', sep = ',')
+# write.table(traitMuAll, 'data/post/traitMuAll.csv', sep = ',')
+# write.table(traitSdAll, 'data/post/traitSdAll.csv', sep = ',')
 
 

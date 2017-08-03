@@ -23,12 +23,15 @@ plotByW <- as.matrix(read.csv('data/post/plotByW.csv'))
 speciesByTraits <- as.data.frame(read.csv('data/post/speciesByTraits.csv'))
 
 
-traitMuAll <- read.csv('data/post/traitMuAll.csv')
-traitSdAll <- read.csv('data/post/traitSdAll.csv')
+# traitMuAll <- read.csv('data/post/traitMuAll.csv')
+# traitSdAll <- read.csv('data/post/traitSdAll.csv')
 
 
-
-traitTypes <- c(rep('CON',6), rep('CAT', 1))
+# load('data/forestTraits.Rdata')
+# speciesByTraits <- forestTraits$specByTrait[c(1,6,2,3:5,10, 7:9,11:12)]
+traitTypes <- as.vector(unlist(read.csv('data/post/traitTypes.csv', colClasses = 'character')))
+# traitTypes
+# traitTypes <- c(rep('CON',6), rep('CAT', 1))
 
 
 

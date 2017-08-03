@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Theme>
+	<name>eco_us_latlon</name>
+	<nameMapping>
+		<SimpleFieldMapping_string><field>PROVINCE</field>
+</SimpleFieldMapping_string>
+	</nameMapping>
+	<colorMapping>
+		<BucketFieldMapping_string_int>
+			<field>PROVINCE</field>
+			<discrete>1</discrete>
+			<buckets>
+				<Bucket_string_int>
+					<minBound>Outer Coastal Plain Mixed Forest Province</minBound>
+					<maxBound>Outer Coastal Plain Mixed Forest Province</maxBound>
+					<value>0</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Pacific Gulf Coastal Forest-Meadow Province</minBound>
+					<maxBound>Pacific Gulf Coastal Forest-Meadow Province</maxBound>
+					<value>0</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Laurentian Mixed Forest Province</minBound>
+					<maxBound>Laurentian Mixed Forest Province</maxBound>
+					<value>0</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Aleutian Oceanic Meadow-Heath Province</minBound>
+					<maxBound>Aleutian Oceanic Meadow-Heath Province</maxBound>
+					<value>0</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Everglades Province</minBound>
+					<maxBound>Everglades Province</maxBound>
+					<value>1</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Bering Tundra (Northern) Province</minBound>
+					<maxBound>Bering Tundra (Northern) Province</maxBound>
+					<value>1</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Eastern Broadleaf Forest (Oceanic) Province</minBound>
+					<maxBound>Eastern Broadleaf Forest (Oceanic) Province</maxBound>
+					<value>1</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Arctic Tundra Province</minBound>
+					<maxBound>Arctic Tundra Province</maxBound>
+					<value>2</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Pacific Lowland Mixed Forest Province</minBound>
+					<maxBound>Pacific Lowland Mixed Forest Province</maxBound>
+					<value>2</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Southwest Plateau and Plains Dry Steppe and Shrub Province</minBound>
+					<maxBound>Southwest Plateau and Plains Dry Steppe and Shrub Province</maxBound>
+					<value>2</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Eastern Broadleaf Forest (Continental) Province</minBound>
+					<maxBound>Eastern Broadleaf Forest (Continental) Province</maxBound>
+					<value>2</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Puerto Rico Province</minBound>
+					<maxBound>Puerto Rico Province</maxBound>
+					<value>3</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Cascade Mixed Forest-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Cascade Mixed Forest-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>3</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Pacific Coastal Mountains Forest-Meadow Province</minBound>
+					<maxBound>Pacific Coastal Mountains Forest-Meadow Province</maxBound>
+					<value>3</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Prairie Parkland (Subtropical) Province</minBound>
+					<maxBound>Prairie Parkland (Subtropical) Province</maxBound>
+					<value>4</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Bering Tundra (Southern) Province</minBound>
+					<maxBound>Bering Tundra (Southern) Province</maxBound>
+					<value>4</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Brooks Range Tundra-Polar Desert Province</minBound>
+					<maxBound>Brooks Range Tundra-Polar Desert Province</maxBound>
+					<value>4</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Seward Peninsula Tundra-Meadow Province</minBound>
+					<maxBound>Seward Peninsula Tundra-Meadow Province</maxBound>
+					<value>5</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>California Coastal Chapparral Forest and Shrub Province</minBound>
+					<maxBound>California Coastal Chapparral Forest and Shrub Province</maxBound>
+					<value>5</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Coastal Trough Humid Tayga Province</minBound>
+					<maxBound>Coastal Trough Humid Tayga Province</maxBound>
+					<value>5</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Hawaiian Islands Province</minBound>
+					<maxBound>Hawaiian Islands Province</maxBound>
+					<value>5</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Great Plains-Palouse Dry Steppe Province</minBound>
+					<maxBound>Great Plains-Palouse Dry Steppe Province</maxBound>
+					<value>6</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Southern Rocky Mountain Steppe-Open Woodland-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Southern Rocky Mountain Steppe-Open Woodland-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>6</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Intermountain Semi-Desert Province</minBound>
+					<maxBound>Intermountain Semi-Desert Province</maxBound>
+					<value>6</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>California Coastal Steppe-Mixed Forest-Redwood Forest Province</minBound>
+					<maxBound>California Coastal Steppe-Mixed Forest-Redwood Forest Province</maxBound>
+					<value>7</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Ahklun Mountains Tundra-Meadow Province</minBound>
+					<maxBound>Ahklun Mountains Tundra-Meadow Province</maxBound>
+					<value>7</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Alaska Range Humid Tayga-Tundra-Meadow Province</minBound>
+					<maxBound>Alaska Range Humid Tayga-Tundra-Meadow Province</maxBound>
+					<value>7</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Southeastern Mixed Forest Province</minBound>
+					<maxBound>Southeastern Mixed Forest Province</maxBound>
+					<value>7</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Sierran Steppe-Mixed Forest-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Sierran Steppe-Mixed Forest-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>8</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Prairie Parkland (Temperate) Province</minBound>
+					<maxBound>Prairie Parkland (Temperate) Province</maxBound>
+					<value>8</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Middle Rocky Mountain Steppe-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Middle Rocky Mountain Steppe-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>8</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Intermountain Semi-Desert and Desert Province</minBound>
+					<maxBound>Intermountain Semi-Desert and Desert Province</maxBound>
+					<value>9</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Great Plains Steppe Province</minBound>
+					<maxBound>Great Plains Steppe Province</maxBound>
+					<value>9</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Colorado Plateau Semi-Desert Province</minBound>
+					<maxBound>Colorado Plateau Semi-Desert Province</maxBound>
+					<value>9</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>California Dry Steppe Province</minBound>
+					<maxBound>California Dry Steppe Province</maxBound>
+					<value>10</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Adirondack-New England Mixed Forest-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Adirondack-New England Mixed Forest-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>10</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Northern Rocky Mountain Forest-Steppe-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Northern Rocky Mountain Forest-Steppe-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>10</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Central Appalachian Broadleaf Forest-Coniferous Forest-Meadow Province</minBound>
+					<maxBound>Central Appalachian Broadleaf Forest-Coniferous Forest-Meadow Province</maxBound>
+					<value>10</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Yukon Intermontane Plateaus Tayga-Meadow Province</minBound>
+					<maxBound>Yukon Intermontane Plateaus Tayga-Meadow Province</maxBound>
+					<value>11</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Nevada-Utah Mountains-Semi-Desert-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Nevada-Utah Mountains-Semi-Desert-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>11</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>American Semi-Desert and Desert Province</minBound>
+					<maxBound>American Semi-Desert and Desert Province</maxBound>
+					<value>11</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Yukon Intermontane Plateaus Tayga Province</minBound>
+					<maxBound>Yukon Intermontane Plateaus Tayga Province</maxBound>
+					<value>12</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Chihuahuan Semi-Desert Province</minBound>
+					<maxBound>Chihuahuan Semi-Desert Province</maxBound>
+					<value>12</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>California Coastal Range Open Woodland-Shrub-Coniferous Forest-Meadow Province</minBound>
+					<maxBound>California Coastal Range Open Woodland-Shrub-Coniferous Forest-Meadow Province</maxBound>
+					<value>12</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Arizona-New Mexico Mountains Semi-Desert-Open Woodland-Coniferous Forest-Alpine Meadow Province</minBound>
+					<maxBound>Arizona-New Mexico Mountains Semi-Desert-Open Woodland-Coniferous Forest-Alpine Meadow Province</maxBound>
+					<value>12</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Upper Yukon Tayga-Meadow Province</minBound>
+					<maxBound>Upper Yukon Tayga-Meadow Province</maxBound>
+					<value>13</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Upper Yukon Tayga Province</minBound>
+					<maxBound>Upper Yukon Tayga Province</maxBound>
+					<value>13</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Ozark Broadleaf Forest - Meadow Province</minBound>
+					<maxBound>Ozark Broadleaf Forest - Meadow Province</maxBound>
+					<value>13</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Ouachita Mixed Forest - Meadow Province</minBound>
+					<maxBound>Ouachita Mixed Forest - Meadow Province</maxBound>
+					<value>14</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Lower Mississippi Riverine Forest Province</minBound>
+					<maxBound>Lower Mississippi Riverine Forest Province</maxBound>
+					<value>14</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Great Plains Steppe and Shrub Province</minBound>
+					<maxBound>Great Plains Steppe and Shrub Province</maxBound>
+					<value>14</value>
+				</Bucket_string_int>
+				<Bucket_string_int>
+					<minBound>Black Hills Coniferous Forest Province</minBound>
+					<maxBound>Black Hills Coniferous Forest Province</maxBound>
+					<value>15</value>
+				</Bucket_string_int>
+			</buckets>
+		</BucketFieldMapping_string_int>
+	</colorMapping>
+	<iconMapping>
+		<ConstantMapping_string><value>-1</value>
+</ConstantMapping_string>
+	</iconMapping>
+	<palette>
+		<ThemePalette>
+			<entries>ff0000aa</entries>
+			<entries>ff0829af</entries>
+			<entries>ff1152b5</entries>
+			<entries>ff197cba</entries>
+			<entries>ff23a3c0</entries>
+			<entries>ff2dc6c1</entries>
+			<entries>ff37cba9</entries>
+			<entries>ff43d191</entries>
+			<entries>ff4ed77e</entries>
+			<entries>ff5adc6c</entries>
+			<entries>ff6fe267</entries>
+			<entries>ff95e874</entries>
+			<entries>ffb6ed82</entries>
+			<entries>ffd6f390</entries>
+			<entries>fff0f99f</entries>
+			<entries>fffef5ad</entries>
+		</ThemePalette>
+	</palette>
+	<clampMode>1</clampMode>
+</Theme>
+</kml>
