@@ -89,8 +89,8 @@ postGibbsChains <- function(betachains,
                             sdTraits=NULL, 
                             exactPredictors=F){
   
-  wFactors <- which(apply(output$x, 2, function(x)all(x%in%c(0,1))))
-  sdCols <- apply(output$x, 2, sd)
+  wFactors <- which(apply(output$inputs$x, 2, function(x)all(x%in%c(0,1))))
+  sdCols <- apply(output$inputs$x, 2, sd)
   sdCols[wFactors] <- 1
   
   

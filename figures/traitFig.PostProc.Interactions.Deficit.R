@@ -3,7 +3,7 @@ source('figures/traitPostAux.R')
 source('~/Projects/procVisData/dataViz.R')
 
 post <- postGibbsChains(betachains = output$chains$agibbs, 
-                        burnin = output$burnin,
+                        burnin = output$modelList$burnin,
                         traitsToPlot = c('N','P','SLA') ,
                         predictorsToPlot = c('deficit:soilAlfInc','deficit:soilEntVert','deficit:soilMol','deficit:soilSpodHist','deficit:soilUltKan'), 
                         onlySignificant = F, 

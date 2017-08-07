@@ -40,6 +40,7 @@ rareSpecies
 
 
 sdTraits <- apply(plotByW%*%as.matrix(speciesByTraits[,1:6]), 2, sd)
-sdTraits <- c(sdTraits, rep(1,3))
-names(sdTraits)[7:9] <- c('leafother', 'leafDeciduous', 'leafNLEver')
+sdTraits <- c(sdTraits, rep(1,8))
+names(sdTraits)[7:14] <- c("shade", "drought", "flood", "leafother", "leafbroaddeciduous", "leafneedleevergreen", "ring", "dioecious")
 sdTraits
+

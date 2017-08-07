@@ -7,15 +7,15 @@ getSensitivity <- function(param, output, traitNames, traitData, normalized = T)
   
   paramSensList <- list()
   
-  wFactors <- which(apply(output$x, 2, function(x)all(x%in%c(0,1))))
-  sdCols <- apply(output$x, 2, sd)
+  wFactors <- which(apply(output$inputs$x, 2, function(x)all(x%in%c(0,1))))
+  sdCols <- apply(output$inputs$x, 2, sd)
   sdCols[wFactors] <- 1
   sdParam <- sdCols[match(param, names(sdCols))]
   if(!normalized) sdParam <- 1
   
   for(j in 4:6){
     postParam <- postGibbsChains(betachains = output$chains$agibbs, 
-                                 burnin = output$burnin,
+                                 burnin = output$modelList$burnin,
                                  traitsToPlot = traitNames[j] ,
                                  predictorsToPlot = param, 
                                  onlySignificant = F, 
@@ -32,7 +32,7 @@ getSensitivity <- function(param, output, traitNames, traitData, normalized = T)
     tmp[grep('\\^2',tmp$pred1),interaction:=T]
     tmp[grep('\\^2',tmp$pred1),fact:=2]
     
-    sensVectors <- output$x[,tmp$inter]*tmp$fact
+    sensVectors <- output$inputs$x[,tmp$inter]*tmp$fact
     sensVectors[,!tmp$interaction] <- 1
     # sensVectors <- cbind(1, output$x[,interactionsList])
     
@@ -65,10 +65,10 @@ getCWT.FilterOnLeaf <- function(output, speciesByTraits, plotByW){
   CWT.deciduous <- (plotByW[,deciduousLeaf$species])%*%as.matrix(
     speciesByTraits[deciduousLeaf$species,c("N","P","SLA")])
   
-  betaTraitMu.Ever <- output$modelSummary$betaMu[,evergreenLeaf$sp]%*%
+  betaTraitMu.Ever <- output$parameters$betaMu[,evergreenLeaf$sp]%*%
     as.matrix(traitData$specByTrait[evergreenLeaf$sp,])
   
-  betaTraitMu.Decid <- output$modelSummary$betaMu[,deciduousLeaf$sp]%*%
+  betaTraitMu.Decid <- output$parameters$betaMu[,deciduousLeaf$sp]%*%
     as.matrix(traitData$specByTrait[deciduousLeaf$sp,])
   
   
@@ -89,18 +89,18 @@ getCWT.FilterOnLeaf <- function(output, speciesByTraits, plotByW){
 }
 
 getCWT.CondOnLeaf <- function(output){
-  tMu <- output$modelSummary$tMu
+  tMu <- output$prediction$tMu
   deciTrait <- everTrait <- tMu
   
-  deciTrait[,7:9] <- everTrait[,7:9] <- 0
-  everTrait[,'leafNLEver'] <- 1
+  deciTrait[,10:12] <- everTrait[,10:12] <- 0
+  everTrait[,'leafneedleevergreen'] <- 1
   everTrait[,'leafother'] <- 1
-  deciTrait[,'leafDeciduous'] <- 1
+  deciTrait[,'leafbroaddeciduous'] <- 1
   
-  oMu <- output$modelSummary$sigmaTraitMu
+  oMu <- output$parameters$sigmaTraitMu
   
-  condDecid <- conditionalMVNVec(deciTrait[,-7],tMu[,-7],oMu[-7,-7],cdex=c(1:6))
-  condEver <- conditionalMVNVec(everTrait[,-7],tMu[,-7],oMu[-7,-7],cdex=c(1:6))
+  condDecid <- conditionalMVNVec(deciTrait[,-10],tMu[,-10],oMu[-10,-10],cdex=c(1:9, 13:14))
+  condEver <- conditionalMVNVec(everTrait[,-10],tMu[,-10],oMu[-10,-10],cdex=c(1:9, 13:14))
   
   # condDecid <- conditionalMVNVec(deciTrait,tMu,oMu,cdex=c(1:6))
   # condEver <- conditionalMVNVec(everTrait,tMu,oMu,cdex=c(1:6))
@@ -119,7 +119,7 @@ getCWT.Mass.Area <- function(output, speciesByTraits, plotByW){
   speciesByTraits.Area['other',] <- 0
   CWT.Area <- (plotByW)%*%as.matrix(speciesByTraits.Area[,c("N","P")])
   
-  CWT.pred <- output$modelSummary$tMu[,1:6]
+  CWT.pred <- output$prediction$tMu[,1:6]
   CWT.cond <- getCWT.CondOnLeaf(output)
   
   list(perMass = CWT.Mass, perArea = CWT.Area, pred = CWT.pred, cond = CWT.cond)
